@@ -18,7 +18,12 @@ import {
   StyledButton,
 } from './PricingHero.styles'
 
-const PricingHero = () => {
+type PricingHeroProps = {
+  variant?: 'default' | 'v2'
+}
+
+const PricingHero = ({ variant = 'default' }: PricingHeroProps) => {
+  const isDefault = variant === 'default'
   const [featuresVisible, setFeaturesVisible] = useState(false)
 
   const toggleFeatures = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,7 +33,7 @@ const PricingHero = () => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper v2={!isDefault}>
         <Container>
           <StyledSectionNextHeader align="center" maxWidth="70%">
             <Title as="h1" align="center">
@@ -42,26 +47,35 @@ const PricingHero = () => {
           <PricingCards />
 
           {/* Has to be inside Wrapper because of the shadows on pricing cards */}
-          <ButtonWrapper>
-            <StyledButton
-              aria-pressed={featuresVisible}
-              size="xsmall"
-              as="anchor"
-              variant="primary"
-              label="Show plan features"
-              to="#toggle-features"
-              onClick={(e) => toggleFeatures(e)}
-            />
-          </ButtonWrapper>
+          {isDefault && (
+            <ButtonWrapper>
+              <StyledButton
+                aria-pressed={featuresVisible}
+                size="xsmall"
+                as="anchor"
+                variant="primary"
+                label="Show plan features"
+                to="#toggle-features"
+                onClick={(e) => toggleFeatures(e)}
+              />
+            </ButtonWrapper>
+          )}
         </Container>
 
-        <StyledVectorOutline />
-        <StyledVectorFilled />
+        {isDefault && (
+          <>
+            <StyledVectorOutline />
+            <StyledVectorFilled />
+          </>
+        )}
       </Wrapper>
 
-      {featuresVisible && <PricingFeatures />}
-
-      <PricingCardStarter />
+      {isDefault && (
+        <>
+          {featuresVisible && <PricingFeatures />}
+          <PricingCardStarter />
+        </>
+      )}
     </>
   )
 }

@@ -9,14 +9,14 @@ import { Button } from '../../components/button/Button'
 import VectorOutline from './images/vector-outline.inline.svg'
 import VectorFilled from './images/vector-filled.inline.svg'
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<{ v2?: boolean }>`
   position: relative;
   overflow: hidden;
   background: ${theme.colors.brand.accentLightest};
   padding: 56px 0 0; // based on design. shit.
 
   ${mq['md']} {
-    padding: 72px 0 0; // based on design. shit.
+    padding: ${({ v2 }) => (v2 ? '72px' : ' 72px 0 0')}; // based on design. shit.
   }
 `
 
