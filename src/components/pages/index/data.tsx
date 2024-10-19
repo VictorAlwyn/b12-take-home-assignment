@@ -5,6 +5,9 @@ import IconAi from '@images/icons/ai.inline.svg'
 import IconSimple from '@images/icons/simple.inline.svg'
 import IconPeople from '@images/icons/people.inline.svg'
 import IconSecure from '@images/icons/secure.inline.svg'
+import IconMagnet from '@images/icons/magnet.inline.svg'
+import IconBell from '@images/icons/bell.inline.svg'
+import IconCup from '@images/icons/cup.inline.svg'
 
 // Data
 export const engageItems = [
@@ -25,6 +28,24 @@ export const engageItems = [
     title: 'Work with experts',
     subtitle:
       'Customize your online presence with the user-friendly B12 Editor or get help from our experts.',
+  },
+]
+
+export const engageItemsV2 = [
+  {
+    icon: <IconMagnet />,
+    title: 'Attract',
+    subtitle: 'Wow potential clients with your professional presence.',
+  },
+  {
+    icon: <IconCup />,
+    title: 'Win',
+    subtitle: 'Streamline how you secure new business.',
+  },
+  {
+    icon: <IconBell />,
+    title: 'Serve',
+    subtitle: 'Deliver an awesome client experience with every interaction.',
   },
 ]
 
