@@ -25,14 +25,7 @@ const LaptopPhoneImage = () => {
           className="hero-image-desktop"
           src="./images/macbook.png"
           alt="Sell your services online"
-          width={960}
-          {...imgProps}
-        />
-        <StaticImage
-          className="hero-image-mobile"
-          src="./images/macbook.png"
-          alt="Sell your services online"
-          width={420}
+          width={1255}
           {...imgProps}
         />
       </ImageLaptopWrapper>
@@ -42,14 +35,7 @@ const LaptopPhoneImage = () => {
           className="hero-image-desktop"
           src="./images/iphone.png"
           alt="Websites that work as hard as you do."
-          width={480}
-          {...imgProps}
-        />
-        <StaticImage
-          className="hero-image-mobile"
-          src="./images/iphone.png"
-          alt="Websites that work as hard as you do."
-          width={480}
+          width={695}
           {...imgProps}
         />
       </ImagePhoneWrapper>
